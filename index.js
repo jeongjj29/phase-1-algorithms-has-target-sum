@@ -1,13 +1,32 @@
 function hasTargetSum(array, target) {
   // Write your algorithm here
+  let newArray = [...array];
+  for (let number of array) {
+    let difference = target - number;
+    newArray.shift()
+    console.log(target);
+    console.log(number);
+    console.log(difference);
+    
+    if (newArray.indexOf(difference, 0) !== -1) {
+      return true;
+    }
+  }
+  return false;
 }
 
 /* 
   Write the Big O time complexity of your function here
+  O(n)
 */
 
 /* 
   Add your pseudocode here
+    Takes in an array and the target sum and outputs true or false.
+    The hasTargetSum function subtracts a number array from the target, and checks
+      to see if that number is in the array, if not, it will move on to the next number 
+      in the array.
+
 */
 
 /*
